@@ -20,12 +20,15 @@ Servo monServo2;
 int vitesse;
 int angle1;
 int angle2;
-const int ANGLE_MIN1  = 1300;//  Modifie le 26/12/2023
-const int ANGLE_MAX1 = 2000;
-const int ANGLE_MIN2  = 1300;//  Modifie le 26/12/2023
-const int ANGLE_MAX2 = 2000;
-const int ANGLE1_SOUSTENSION = 2000;//  Modifie le 26/12/2023
-const int ANGLE2_SOUSTENSION = 2000;//  Modifie le 26/12/2023
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//1000µs donnera un angle de 0° et une valeur de 2000µs donnera un angle de 180°.
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+const int ANGLE_MIN1  = 1400;//  Modifie le 26/12/2023
+const int ANGLE_MAX1 = 1998;// 2000 Modifie le 07/08/2024
+const int ANGLE_MIN2  = 1400;// 1300 Modifie le 07/08/2024
+const int ANGLE_MAX2 = 1998;// 2000 Modifie le 07/08/2024
+const int ANGLE1_SOUSTENSION = 1998;// 1500 Modifie le 07/08/2024
+const int ANGLE2_SOUSTENSION = 1998;// 1500 Modifie le 07/08/2024
 
 bool cdeServos;
 
@@ -63,7 +66,10 @@ monServo1.attach(4);// Port PD
 monServo2.attach(8);// Port PB
 angle1 = ANGLE_MIN1;
 angle2 = ANGLE_MIN2;
-vitesse = 2;
+vitesse = 4;
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//1000µs donnera un angle de 0° et une valeur de 2000µs donnera un angle de 180°.
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 monServo1.writeMicroseconds(ANGLE1_SOUSTENSION);
 monServo2.writeMicroseconds(ANGLE2_SOUSTENSION);
 
@@ -82,6 +88,8 @@ memDet1 = 0;
 memDet2 = 1;
 
 Serial.begin(9600); 
+delay(5000);
+
 }//FIN_SETUP
 //--------------------------------------------
 void loop()
@@ -143,23 +151,23 @@ etatDet2 = analogRead(DET2);
       digitalWrite(FLASH,HIGH);
     } 
 //--------------------------------------------
-if(cdeServos == 1)
-  {
-    //ServosFermeture1();//  Modifie le 26/12/2023
-    //ServosFermeture2();//  Modifie le 26/12/2023
-    ServosOuverture1();
-    ServosOuverture2();
-    delay(2);
-  }
+  if(cdeServos == 1)
+    {
+      //ServosFermeture1();//  Modifie le 26/12/2023
+      //ServosFermeture2();//  Modifie le 26/12/2023
+      ServosOuverture1();
+      ServosOuverture2();
+      delay(2);
+    }
 //--------------------------------------------
-if(cdeServos == 0)
-  {
-    //ServosOuverture1();//  Modifie le 26/12/2023
-    //ServosOuverture2();//  Modifie le 26/12/2023
-    ServosFermeture1();
-    ServosFermeture2();
-    delay(2);
-  }
+  if(cdeServos == 0)
+    {
+      //ServosOuverture1();//  Modifie le 26/12/2023
+      //ServosOuverture2();//  Modifie le 26/12/2023
+      ServosFermeture1();
+      ServosFermeture2();
+      delay(2);
+    }
 //--------------------------------------------
 if(etatDet1 < 512 || etatDet2 < 512) 
   {
@@ -184,9 +192,9 @@ Serial.print("\t");
 Serial.print("\t");
 Serial.print(angle1);
 Serial.print("\t");
-Serial.print(angle2);
-Serial.print("\t");
-Serial.println(zoneOccupee);
+Serial.println(angle2);
+//Serial.print("\t");
+//Serial.println(zoneOccupee);
 }//FIN_LOOP
 //--------------------------------------------
 void ServosFermeture1()
@@ -266,12 +274,12 @@ void pulsD11()
     memPulsD11 = 1;
     tempsCourant = millis();
   }  
-if(millis() - tempsCourant >= tempsPULS_D11)
-  {
-    digitalWrite(PULS_D11, HIGH);         
-  }      
-if(zoneOccupee == 0)
-  {
-    memPulsD11 = 0;    
-  }  
+  if(millis() - tempsCourant >= tempsPULS_D11)
+    {
+      digitalWrite(PULS_D11, HIGH);         
+    }      
+  if(zoneOccupee == 0)
+    {
+      memPulsD11 = 0;    
+    }  
 }
