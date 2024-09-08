@@ -9,6 +9,7 @@
            https://www.volta.ma/comment-controler-les-servomoteurs-avec-arduino/arduino/
            https://www.carnetdumaker.net/articles/controler-un-servomoteur-avec-une-carte-arduino-genuino/
            https://eskimon.fr/tuto-arduino-602-un-moteur-qui-a-de-la-tête-le-servomoteur
+           https://zestedesavoir.com/tutoriels/686/arduino-premiers-pas-en-informatique-embarquee/747_le-mouvement-grace-aux-moteurs/3438_un-moteur-qui-a-de-la-tete-le-servomoteur/
            
    https://electroniquepassion.fr/ 
    C.Mercier  62128 Boiry-Becquerelle  
@@ -20,9 +21,10 @@ Servo monServo2;
 int vitesse;
 int angle1;
 int angle2;
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//1000µs donnera un angle de 0° et une valeur de 2000µs donnera un angle de 180°.
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+544µs donnera un angle de 0° et une valeur de 2400µs donnera un angle de 180°.
+A verifier avec le datasheet du servomoteur
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 const int ANGLE_MIN1  = 1400;//  Modifie le 26/12/2023
 const int ANGLE_MAX1 = 1998;// 2000 Modifie le 07/08/2024
 const int ANGLE_MIN2  = 1400;// 1300 Modifie le 07/08/2024
@@ -67,9 +69,10 @@ monServo2.attach(8);// Port PB
 angle1 = ANGLE_MIN1;
 angle2 = ANGLE_MIN2;
 vitesse = 4;
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//1000µs donnera un angle de 0° et une valeur de 2000µs donnera un angle de 180°.
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+544µs donnera un angle de 0° et une valeur de 2400µs donnera un angle de 180°.
+A verifier avec le datasheet du servomoteur
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 monServo1.writeMicroseconds(ANGLE1_SOUSTENSION);
 monServo2.writeMicroseconds(ANGLE2_SOUSTENSION);
 
