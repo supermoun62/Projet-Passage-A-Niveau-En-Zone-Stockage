@@ -16,11 +16,11 @@ PCB_PDF_Passage_A_niveau_Stockage
 
 Le fichier Passage_A_niveau_Stockage.pdf contient le détail du projet.
 
-pcb
-https://github.com/supermoun62/Projet-Passage-A-Niveau-En-Zone-Stockage/blob/main/Github_Projet_Passage_a_niveau_zone_stockage_3D.png
+synoptique:
+https://github.com/supermoun62/Projet-Passage-A-Niveau-En-Zone-Stockage/blob/main/Github_Projet_Passage_a_niveau_zone_stockage_Images/Github_Projet_Passage_a_niveau_zone_stockage_Synoptique.png
 
-Implantation:
-https://github.com/supermoun62/Projet-Passage-A-Niveau-En-Zone-Stockage/blob/main/Github_Projet_Passage_a_niveau_zone_stockage_PCB.png
+PCB 3D
+https://github.com/supermoun62/Projet-Passage-A-Niveau-En-Zone-Stockage/blob/main/Github_Projet_Passage_a_niveau_zone_stockage_Images/Github_Projet_Passage_a_niveau_zone_stockage_3D.png
 
-Synoptique:
-https://github.com/supermoun62/Projet-Passage-A-Niveau-En-Zone-Stockage/blob/main/Github_Projet_Passage_a_niveau_zone_stockage_Synoptique.png
+PCB
+https://github.com/supermoun62/Projet-Passage-A-Niveau-En-Zone-Stockage/blob/main/Github_Projet_Passage_a_niveau_zone_stockage_Images/Github_Projet_Passage_a_niveau_zone_stockage_PCB.png
